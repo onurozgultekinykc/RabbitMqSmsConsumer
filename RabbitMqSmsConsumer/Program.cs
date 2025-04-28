@@ -13,6 +13,6 @@ class Program
         await smsConsumer.InitializeAsync(hostName); // Bağlantıyı başlat
         smsConsumer.StartListening(); // Mesajları dinlemeye başla
 
-        await Task.Delay(-1); // Programın sürekli çalışmasını sağlas
+        await Task.Delay(-1); // Programın sürekli çalışmasını sağlasn
     }
 }
