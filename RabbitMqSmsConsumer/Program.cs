@@ -9,7 +9,8 @@ class Program
         Console.WriteLine("Sms Consumer başlatılıyor...");
 
         var smsConsumer = new SmsConsumer();
-        await smsConsumer.InitializeAsync(); // Bağlantıyı başlat
+        var hostName = Environment.GetEnvironmentVariable("HOST_NAME") ?? "192.168.1.76";
+        await smsConsumer.InitializeAsync(hostName); // Bağlantıyı başlat
         smsConsumer.StartListening(); // Mesajları dinlemeye başla
 
         await Task.Delay(-1); // Programın sürekli çalışmasını sağla

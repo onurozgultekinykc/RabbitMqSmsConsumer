@@ -14,12 +14,13 @@ namespace MailConsumerRabbitMQ.Modals
         private IConnection _connection;
         private IChannel _channel;
 
-        public async Task InitializeAsync()
+        public async Task InitializeAsync(string hostName)
         {
+            Console.WriteLine(hostName+" / env_ = HOST_NAME");
             _factory = new ConnectionFactory
             {
                 Port = 5672,
-                HostName = "c_rabbitmq",
+                HostName = hostName,
                 //HostName = "192.168.1.76",
                 UserName = "user",
                 Password = "1234567",
