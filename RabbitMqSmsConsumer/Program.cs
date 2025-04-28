@@ -6,7 +6,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine("Sms Consumer başlatılıyor...");
+        Console.WriteLine("Sms Consumer başlatılıyor.");
 
         var smsConsumer = new SmsConsumer();
         var hostName = Environment.GetEnvironmentVariable("HOST_NAME") ?? "192.168.1.76";
