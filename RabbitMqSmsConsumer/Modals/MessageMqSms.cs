@@ -9,6 +9,6 @@ namespace RabbitMqSmsConsumer.Modals
     public class MessageMQSms
     {
         public string baseUrl { get; set; }
-        public FormUrlEncodedContent data { get; set; }
+        public Dictionary<string, string> data { get; set; }
     }
 }

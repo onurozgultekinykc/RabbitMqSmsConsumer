@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMqSmsConsumer.Modals;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MailConsumerRabbitMQ.Modals
 {
@@ -80,7 +81,8 @@ namespace MailConsumerRabbitMQ.Modals
             try
             {
                 var httpClient = new HttpClient();
-                using (var response = await httpClient.PostAsync(_mail.baseUrl, _mail.data))
+                var request = _mail.data is not null ? new FormUrlEncodedContent(_mail.data) : null;
+                using (var response = await httpClient.PostAsync(_mail.baseUrl, request))
                 {
                     if (response.IsSuccessStatusCode)
                     {
