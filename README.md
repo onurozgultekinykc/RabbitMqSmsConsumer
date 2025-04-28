@@ -1,1 +1,1 @@
-enc HOST_NAME
+env HOST_NAME
